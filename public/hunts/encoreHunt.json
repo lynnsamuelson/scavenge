@@ -1,0 +1,14 @@
+[
+    {
+      "id": 101,
+      "clue": "This could be red",
+      "answer": "Fire Hydrant",
+      "checked": false
+    },
+    {
+      "id": 102,
+      "clue": "Tells Cars to stop.",
+      "answer": "Stop light",
+      "checked": false
+    }
+  ]

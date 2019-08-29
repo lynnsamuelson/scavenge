@@ -30,9 +30,6 @@ export default {
     margin: 10px 0 0 -36px;
   }
 
-  h5 {
-    margin: 0;
-    background-color: gray;
-  }
+  
   
 </style>
