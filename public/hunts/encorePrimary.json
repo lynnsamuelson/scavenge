@@ -27,7 +27,7 @@
         "desc": "This is the description of the TN State Museum",
         "order": 1,
         "display": false,
-        "got": true
+        "got": false
     },
     {
       "id": 3,

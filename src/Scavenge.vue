@@ -1,10 +1,12 @@
 <template>
   <div id="app">
-    <h2>Encore Scavenger Hunt</h2>
-    <button v-on:click="GetFirstItem(1)" id="foundBtn" class="left button">Found</button>
-    <button v-on:click="GetFirstItem(0)" id="toFindBtn" class="left button">To Find</button>
-    <button v-on:click="GetFirstItem(2)" id="allBtn" class="left button">All</button>
-    <div class="card">
+    <div class="nav control">
+      <h2 class="title">Encore Scavenger Hunt</h2>
+      <button v-on:click="GetFirstItem(1)" id="foundBtn" :class="{'displaying' : display == 1}" class="left button" >Found</button>
+      <button v-on:click="GetFirstItem(0)" id="toFindBtn" class="left button" :class="{'displaying' : display == 0}">To Find</button>
+      <button v-on:click="GetFirstItem(2)" id="allBtn" class="left button" :class="{'displaying' : display == 2}">All</button>
+    </div>
+    <div class="card topcard">
       <div class="nav">
         <button v-on:click="Previous()" class="left button">Previous</button>
         <button v-on:click="Next()" class="right button">Next</button>
@@ -38,6 +40,9 @@ export default {
     Secondary
   },
   data() {
+    //display 0 - show not complete
+      //display 1 - show complete
+      //display 2 - show all
     return {items: huntItems, secondary:secondary, display: 0}
   },
   mounted:function(){
@@ -45,67 +50,91 @@ export default {
     this.GetFirstItem(this.display);
   },
   computed: {
-    filteredDisplays: function() {
+    found: function(){
       var displayFound = [];
-      let displayNotFound = [];
-      let displayAll = [];
       for(var i = 0; i<this.items.length; i++){
         if(this.items[i].got === true){
           displayFound.push(this.items[i]);
-        } else {
-          displayNotFound.push(this.items[i]);
-        }
-        displayAll.push(this.items[i]);
+        } 
       }
-      let filteredLists = [];
-      filteredLists.push(displayFound);
-      filteredLists.push(displayNotFound);
-      filteredLists.push(displayAll);
-      return filteredLists;
+      return displayFound;
+    },
+    toFind: function(){
+      var displayNotFound = [];
+      for(var i = 0; i<this.items.length; i++){
+        if(this.items[i].got === false){
+          displayNotFound.push(this.items[i]);
+        } 
+      }
+      return displayNotFound;
     }
   },
   methods: {
     Next() {
-      console.log("display", this.display, this.items);
-
-      // let items = this.items;
+      let displays = [];
+      switch(this.display){
+        case 0:
+          // console.log("toFind", this.toFind);
+          displays = this.toFind;
+          break;
+        case 1: 
+          // console.log("found", this.found);
+          displays = this.found;
+          break;
+        default:
+          // console.log("all", this.items);
+          displays = this.items;
+          break;
+      }
       let currentIndx = this.items.findIndex(el => el.display === true);
-      
-      let displays = this.filteredDisplays[this.display];
-      console.log("displays", displays);
-      
-      // let order = this.items[currentIndx].order + 1;
-      // let nextIndx = this.items.findIndex(el => el.order === order);
-      // if(nextIndx == -1){
-      //   nextIndx = this.items.findIndex(el => el.order == 1);
-      // }
-    
-      // let nextItem = items[nextIndx];
-      // nextItem.display = true;
-      // this.items[currentIndx].display = false;
-      // return nextIndx;
+
+      //find item for next display
+      let displaysCurrentIndx = displays.findIndex(el => el.id == this.items[currentIndx].id);
+      let next;
+      if(displaysCurrentIndx === displays.length-1){
+        next = displays[0];
+      } else {
+        next = displays[displaysCurrentIndx+1];
+      } 
+
+      let nextIndx = this.items.findIndex(el => el.id === next.id);
+      this.items[currentIndx].display = false;
+      this.items[nextIndx].display = true;
+
+      return nextIndx;
     },
     Previous(){
-      let currentIndx = this.items.findIndex(el => el.display === true);
-      let order = this.items[currentIndx].order - 1
-      let prevIndx = this.items.findIndex(el => el.order === order);
-
-      function GetLastItem(prevIndx, items){
-        let lastItem = 0;
-        for(var i = 0; i<items.length; i++) {
-          if(items[i].order > prevIndx){
-            prevIndx = i;
-          }
-        }
-        return prevIndx;
+      let displays = [];
+      switch(this.display){
+        case 0:
+          // console.log("toFind", this.toFind);
+          displays = this.toFind;
+          break;
+        case 1: 
+          // console.log("found", this.found);
+          displays = this.found;
+          break;
+        default:
+          // console.log("all", this.items);
+          displays = this.items;
+          break;
       }
+      let currentIndx = this.items.findIndex(el => el.display === true);
 
-      if(prevIndx == -1){
-        prevIndx = GetLastItem(prevIndx, this.items);
-      };
-      
-      this.items[prevIndx].display = true;
+      //find item for next display
+      let displaysCurrentIndx = displays.findIndex(el => el.id == this.items[currentIndx].id);
+      let prev;
+      if(displaysCurrentIndx === 0){
+        prev = displays[displays.length-1];
+      } else {
+        prev = displays[displaysCurrentIndx-1];
+      } 
+
+      let prevIndx = this.items.findIndex(el => el.id === prev.id);
       this.items[currentIndx].display = false;
+      this.items[prevIndx].display = true;
+
+      return prevIndx;
     },
     ClearDisplay(){
       for(var i = 0; i< this.items.length; i++){
@@ -113,9 +142,6 @@ export default {
       }
     },
     GetFirstItem(display){
-      //display 0 - show not complete
-      //display 1 - show complete
-      //display 2 - show all
       this.display = display;
       this.ClearDisplay();
       switch(display){
@@ -162,7 +188,8 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #CACBCA;
+  color: #ffffff;
+  /* color: #CACBCA; */
   margin-top: 20px;
 }
 
@@ -171,7 +198,7 @@ export default {
 }
 
 body {
-  background-color: #010201;
+  background-color: #07050c;
   color:#CACBCA;
 }
 
@@ -186,22 +213,28 @@ h5 {
     transform: translate(-50%, -50%)
   }
 
+.title {
+  margin: -4px 0 10px 0;
+}
+
 .h5Wrapper {
-    background-color: #003366;
+    background-color: #46B019;
     min-height: 35px;
     width: 100%;
     position: relative;
     margin: 0 0 10px 0;
-
 }
 
 .card{
-  border: 1px solid #CACBCA;
   margin: 5% 5%;
-  height: 300px;
+  height: 280px;
   float: left;
   width: 90%;
   padding: 5%;
+}
+
+.topcard {
+  background-color: #279ECC;
 }
 
 .list {
@@ -211,25 +244,39 @@ h5 {
   text-align: center;
 }
 
+
+
 .found {
   float: right;
   width: 30%;
   height: 500px;
 }
 
+
 .bottomCard {
-  margin: 10px 0 0 10px;
+  /* margin: 10px 0 0 10px; */
+  background-color: #90D277;
 }
 
 .nav {
   margin: 0 0 35px 0;
+  /* margin: 5% 5%; */
+}
+
+.control{
+ background-color: #A34F3366;
+  margin: 5% 5%;
+  float: left;
+  width: 90%;
+  padding: 5%;
 }
 .image {
   height: auto;
   width:90%;
 }
+
 .button {
-  background-color: #003366;
+  background-color: #00336685;
   border: none;
   min-height: 25px;
   color: #CACBCA;
@@ -243,4 +290,16 @@ h5 {
 .right {
   float:right;
 }
+.control .button {
+  background-color: #00336633;
+  min-height: 50px;
+  border-radius: 50%;
+  min-width: 50px;
+  margin: 0 20px;
+}
+#app .displaying {
+  background-color: #A34F33;
+}
+
+
 </style>
