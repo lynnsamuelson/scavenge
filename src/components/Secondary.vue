@@ -1,8 +1,13 @@
 <template>
   <div >
-    <input type="checkbox" v-on:click="Checked()"/>
-    <span v-if="item.checked" class="answer">{{item.answer}}</span>
-    <span v-else class="clue">{{item.clue}}</span>
+    <div v-if="item.display == true" class="answer">
+      <p>{{item.clue}}</p>
+      <div v-if="item.checked">
+        <p>Answer: {{item.answer}}</p>
+      </div>
+      <button v-on:click="Checked()" class="left button greenBtn">{{btnText}}</button>
+      <button v-on:click="AnotherClue()" class="right button greenBtn">Next</button>
+    </div>
   </div>
 </template>
 
@@ -12,17 +17,24 @@
 export default {
   name: 'Secondary',
   props: {
-    item: Object
+    item: Object,
+  },
+  data() {
+    return {btnText: "Found It!" }   
   },
   methods: {
     Checked(){
-      console.log("checking item", this.item);
       if(this.item.checked){
-        this.item.checked = true;
+        this.item.checked = false;
       } else {
         this.item.checked = true;
       }
+      this.btnText = "Hide Answer";
+    },
+    AnotherClue(){
+      this.$parent.AnotherClue();
     }
+    
     
   }
 }
@@ -35,6 +47,7 @@ export default {
     margin: 10px 0 0 -36px;
   }
 
-  
-  
+  .greenBtn {
+    background-color: #46B019;
+  }
 </style>

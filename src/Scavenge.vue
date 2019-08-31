@@ -46,7 +46,6 @@ export default {
     return {items: huntItems, secondary:secondary, display: 0}
   },
   mounted:function(){
-    console.log("this is page load", this.display);
     this.GetFirstItem(this.display);
   },
   computed: {
@@ -74,21 +73,16 @@ export default {
       let displays = [];
       switch(this.display){
         case 0:
-          // console.log("toFind", this.toFind);
           displays = this.toFind;
           break;
         case 1: 
-          // console.log("found", this.found);
           displays = this.found;
           break;
         default:
-          // console.log("all", this.items);
           displays = this.items;
           break;
       }
       let currentIndx = this.items.findIndex(el => el.display === true);
-
-      //find item for next display
       let displaysCurrentIndx = displays.findIndex(el => el.id == this.items[currentIndx].id);
       let next;
       if(displaysCurrentIndx === displays.length-1){
@@ -107,21 +101,17 @@ export default {
       let displays = [];
       switch(this.display){
         case 0:
-          // console.log("toFind", this.toFind);
           displays = this.toFind;
           break;
         case 1: 
-          // console.log("found", this.found);
           displays = this.found;
           break;
         default:
-          // console.log("all", this.items);
           displays = this.items;
           break;
       }
       let currentIndx = this.items.findIndex(el => el.display === true);
 
-      //find item for next display
       let displaysCurrentIndx = displays.findIndex(el => el.id == this.items[currentIndx].id);
       let prev;
       if(displaysCurrentIndx === 0){
@@ -173,6 +163,17 @@ export default {
           this.items[0].display = true;
           break;
       }
+    },
+    AnotherClue(){
+      let currentClueIndx = secondary.findIndex(el => el.display === true);
+      let nextClue = secondary[currentClueIndx+1];
+      
+      secondary[currentClueIndx].display = false;
+      if(secondary[currentClueIndx+1]){
+        secondary[currentClueIndx+1].display = true;
+      } else {
+        secondary[0].display = true;
+      }
     }
   }
 }
@@ -182,14 +183,13 @@ export default {
 #app {
   width: 100%;
   content: "";
-    display: table;
-    clear: both;
+  display: table;
+  clear: both;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #ffffff;
-  /* color: #CACBCA; */
   margin-top: 20px;
 }
 
@@ -244,8 +244,6 @@ h5 {
   text-align: center;
 }
 
-
-
 .found {
   float: right;
   width: 30%;
@@ -254,13 +252,11 @@ h5 {
 
 
 .bottomCard {
-  /* margin: 10px 0 0 10px; */
   background-color: #90D277;
 }
 
 .nav {
   margin: 0 0 35px 0;
-  /* margin: 5% 5%; */
 }
 
 .control{
@@ -270,9 +266,11 @@ h5 {
   width: 90%;
   padding: 5%;
 }
+
 .image {
   height: auto;
   width:90%;
+  margin: 0 5%;
 }
 
 .button {
@@ -300,6 +298,4 @@ h5 {
 #app .displaying {
   background-color: #A34F33;
 }
-
-
 </style>

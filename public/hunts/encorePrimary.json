@@ -11,20 +11,20 @@
     },
     {
       "id": 2,
-      "clue": "This is where farmers go to sell their commodities",
-      "answer": "Farmer's Market",
+      "clue": "Started nearly 200 years ago, this is the place local growers can pull up their trucks, unpack their crates, and sell what they gathered from their fields. Fresh zucchini, anyone? ",
+      "answer": "Nashvillt Farmer's Market",
       "image": "/img/tanner-boriack-GmoaEH48m8c-unsplash.jpg",
       "desc": "This is the description of the Farmer's Market.",
       "order": 2,
       "display": false,
-      "got": true
+      "got": false
     },
     {
         "id": 4,
-        "clue": "The history of TN is stored and displayed here.",
+        "clue": "This newly-built museum houses old things from Tennessee including a wagon, long hunters’ rifles, and a mummy.",
         "answer": "TN State Museum",
-        "image": "/img/tanner-boriack-GmoaEH48m8c-unsplash.jpg",
-        "desc": "This is the description of the TN State Museum",
+        "image": "/img/TNStateMusuem.jpg",
+        "desc": "This newly-built museum houses old things from Tennessee including a wagon, long hunters’ rifles, and a mummy.",
         "order": 1,
         "display": false,
         "got": false

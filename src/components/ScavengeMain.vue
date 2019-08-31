@@ -1,39 +1,28 @@
 <template>
 <div v-if="data == 0">
-  <div v-if="item.got  && item.display">
-  <!-- <div v-if="item.display === true && item.got" > -->
-  <div>
+  <div v-if="item.got && item.display">
     <p>Answer: {{item.answer}}</p>
-  </div>
-  <div class="image">
-    <img :src="item.image" class="image">
-  </div>
-  <div class="description">
-    <p>{{item.desc}}</p>
+    <div class="image">
+      <img :src="item.image" class="image">
+    </div>
   </div>
 </div>
-</div>
-  <!-- </div> -->
-<!-- </div> -->
 <div v-else-if="data == 1 && item.display" >
   <div v-if="!item.got">
-  <div class="clue">
-    <p>Clue: {{item.clue}}</p>
+    <div class="clue">
+      <p>Clue: {{item.clue}}</p>
+    </div>
+    <button v-on:click="GotIt()" class="button">Got It!</button>
   </div>
-  <button v-on:click="GotIt()" class="button">Got It!</button>
-</div>
 </div>
 <div v-else>
     <div v-if="item.display" >
-    <div v-if="item.got" class="answer">
+      <div v-if="item.got" class="answer">
       <div>
         <p>Answer: {{item.answer}}</p>
       </div>
       <div class="image">
         <img :src="item.image" class="image">
-      </div>
-      <div class="description">
-        <p>{{item.desc}}</p>
       </div>
     </div>
     <div v-else>
@@ -68,7 +57,7 @@ export default {
 <style scoped>
 
 .clue {
-  margin: 100px 0 0 0;
+  margin: 55px 0 35px 0;
 }
 
 .answer {

@@ -1,14 +1,26 @@
 [
     {
       "id": 101,
-      "clue": "This could be red",
+      "clue": "Did you know that a horrible blaze burned 35 blocks of East Nashville in 1916? A little boy’s sock caught fire, and he threw it outside on dry grass. Today, city codes require that ______________ are ready on most city blocks to help fight fires. Don’t park in front of one….",
       "answer": "Fire Hydrant",
+      "display": true,
+      "showAnser": false,
       "checked": false
     },
     {
-      "id": 102,
-      "clue": "Tells Cars to stop.",
-      "answer": "Stop light",
-      "checked": false
+        "id": 102,
+        "clue": "City planners and engineers use these red, yellow, and green boxes to keep traffic flowing smoothly. Don’t go through on red!",
+        "answer": "Traffic light",
+        "display": false,
+        "showAnser": false,
+        "checked": false
+    },
+    {
+        "id": 103,
+        "clue": "",
+        "answer": "Third Clue",
+        "display": false,
+        "showAnser": false,
+        "checked": false
     }
   ]
