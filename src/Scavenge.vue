@@ -226,10 +226,10 @@ h5 {
 }
 
 .card{
-  margin: 5% 5%;
-  height: 280px;
+  margin: 1% 15%;
+  height: 520px;
   float: left;
-  width: 90%;
+  width: 70%;
   padding: 5%;
 }
 
@@ -250,9 +250,9 @@ h5 {
   height: 500px;
 }
 
-
 .bottomCard {
   background-color: #90D277;
+  height: 280px;
 }
 
 .nav {
@@ -261,15 +261,15 @@ h5 {
 
 .control{
  background-color: #A34F3366;
-  margin: 5% 5%;
+  margin: 1% 15%;
   float: left;
-  width: 90%;
+  width: 70%;
   padding: 5%;
 }
 
 .image {
   height: auto;
-  width:90%;
+  width:85%;
   margin: 0 5%;
 }
 
@@ -281,9 +281,7 @@ h5 {
   min-width: 48%;
 }
 
-.left {
-  float: left;
-}
+
 
 .right {
   float:right;
@@ -298,4 +296,26 @@ h5 {
 #app .displaying {
   background-color: #A34F33;
 }
+
+@media (max-width: 450px) { 
+  .control{
+    background-color: #A34F3366;
+    margin: 5% 5%;
+    float: left;
+    width: 90%;
+    padding: 5%;
+  }
+
+  .left {
+    float: left;
+  }
+
+  .card{
+    margin: 5% 5%;
+    width: 90%;
+    height: 280px;
+  }
+
+}
+
 </style>

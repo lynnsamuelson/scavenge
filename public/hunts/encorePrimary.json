@@ -3,17 +3,17 @@
       "id": 1,
       "clue": "This is the TN seat of government",
       "answer": "State Capital",
-      "image": "/img/tanner-boriack-GmoaEH48m8c-unsplash.eef08a16.jpg",
+      "image": "/img/capitol.jpg",
       "desc": "This is the description of the State Capital.",
       "order": 3,
       "display": false,
       "got": false
     },
     {
-      "id": 2,
-      "clue": "Started nearly 200 years ago, this is the place local growers can pull up their trucks, unpack their crates, and sell what they gathered from their fields. Fresh zucchini, anyone? ",
-      "answer": "Nashvillt Farmer's Market",
-      "image": "/img/tanner-boriack-GmoaEH48m8c-unsplash.jpg",
+        "id": 2,
+        "clue": "Started nearly 200 years ago, this is the place local growers can pull up their trucks, unpack their crates, and sell what they gathered from their fields. Fresh zucchini, anyone? ",
+        "answer": "Nashville Farmer's Market",
+      "image": "/img/farmersMarket.jpeg",
       "desc": "This is the description of the Farmer's Market.",
       "order": 2,
       "display": false,
@@ -31,12 +31,22 @@
     },
     {
       "id": 3,
-      "clue": "This is where firemen sleep",
-      "answer": "Firehouse",
-      "image": "/img/tanner-boriack-GmoaEH48m8c-unsplash.eef08a16.jpg",
-      "desc": "This is the description of the Firehouse.",
+      "clue": "NEED CLUE ",
+      "answer": "Bicentenial Mall",
+      "image": "/img/bicentenialMall.jpg",
+      "desc": "This is the description of the Bicentenial Mall.",
       "order": 4,
       "display": false,
       "got": false
-    }
+    },
+    {
+        "id": 5,
+        "clue": "NEED CLUE ",
+        "answer": "First TN Park",
+        "image": "/img/firstTNPark.jpg",
+        "desc": "This is the description of the First TN Park",
+        "order": 5,
+        "display": false,
+        "got": false
+      }
   ]

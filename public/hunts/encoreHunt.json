@@ -17,8 +17,48 @@
     },
     {
         "id": 103,
-        "clue": "",
-        "answer": "Third Clue",
+        "clue": "Metro Nashville Public Works and the Tennessee Department of Transportation are in charge of building and paving hundreds of miles of _____________ around the city. Look both ways before you cross!",
+        "answer": "Roads",
+        "display": false,
+        "showAnser": false,
+        "checked": false
+    },
+    {
+        "id": 104,
+        "clue": "You can get around town on one of these large vehicles, but you need to know the schedule and its route. It has a seat ready for you… if you pay your fare and stand at the __________________.",
+        "answer": "Bus",
+        "display": false,
+        "showAnser": false,
+        "checked": false
+    },
+    {
+        "id": 105,
+        "clue": "Nashville’s population is growing, but city planners want to make sure there’s green space for people to relax under trees, play, walk, and bike. They have a master plan for our city ________________. ",
+        "answer": "Parks",
+        "display": false,
+        "showAnser": false,
+        "checked": false
+    },
+    {
+        "id": 106,
+        "clue": "Giant cranes are required to construct this type of building, and Nashville’s skyline has more and more each year. ____________________",
+        "answer": "",
+        "display": false,
+        "showAnser": false,
+        "checked": false
+    },
+    {
+        "id": 107,
+        "clue": "We don’t think much about what’s below the streets, but these circles allow workers to get to an underground maze of drains, wiring, and other infrastructure. You find them on sidewalks and streets. ___________________________",
+        "answer": "Manholes",
+        "display": false,
+        "showAnser": false,
+        "checked": false
+    },
+    {
+        "id": 108,
+        "clue": "In a city cut by a river, this structure is important because it lets people and vehicles cross from one side to the other. In Nashville, we have one that’s only for pedestrians (people crossing on foot) ____________________.",
+        "answer": "Bridge",
         "display": false,
         "showAnser": false,
         "checked": false
