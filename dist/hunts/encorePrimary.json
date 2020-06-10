@@ -13,11 +13,11 @@
         "id": 2,
         "clue": "Started nearly 200 years ago, this is the place local growers can pull up their trucks, unpack their crates, and sell what they gathered from their fields. Fresh zucchini, anyone? ",
         "answer": "Nashville Farmer's Market",
-      "image": "/img/farmersMarket.jpeg",
-      "desc": "This is the description of the Farmer's Market.",
-      "order": 2,
-      "display": false,
-      "got": false
+        "image": "/img/farmersMarket.jpeg",
+        "desc": "This is the description of the Farmer's Market.",
+        "order": 2,
+        "display": false,
+        "got": false
     },
     {
         "id": 4,
