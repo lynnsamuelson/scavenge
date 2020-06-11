@@ -27,6 +27,7 @@
     </div>
     <div v-else>
       <div class="clue">
+        <div>Directions: {{item.directions}}</div>
         <p>Clue: {{item.clue}}</p>
       </div>
       <button v-on:click="GotIt()" class="button">Got It!</button>

@@ -24,7 +24,6 @@
 
 <script>
 import ScavengeMain from './components/ScavengeMain.vue'
-import Done from './components/Done.vue'
 import Secondary from './components/Secondary.vue'
 
 import secondary from '../public/hunts/encoreHunt.json'
@@ -36,7 +35,6 @@ export default {
   name: 'app',
   components: {
     ScavengeMain,
-    Done,
     Secondary
   },
   data() {
@@ -66,6 +64,22 @@ export default {
         } 
       }
       return displayNotFound;
+    },
+    noClues: function(){
+      var noClues = [];
+      var item = {
+        "id": 5,
+        "clue": "NEED CLUE ",
+        "answer": "First TN Park",
+        "image": "/img/firstTNPark.jpg",
+        "desc": "This is the description of the First TN Park",
+        "directions": "Dicetions to the First TN Park",
+        "order": 5,
+        "display": true,
+        "got": false
+      }
+      noClues.push(item);
+      return noClues;
     }
   },
   methods: {
@@ -73,7 +87,13 @@ export default {
       let displays = [];
       switch(this.display){
         case 0:
-          displays = this.toFind;
+          //need to fix bug that if you find all the things it does not cycle and stays on last item
+          console.log("length", this.toFind.length)
+          if(this.toFind.length > 0){
+            displays = this.toFind;
+          } else {
+            displays = this.noClues;
+          }
           break;
         case 1: 
           displays = this.found;
@@ -291,7 +311,7 @@ h5 {
   min-height: 50px;
   border-radius: 50%;
   min-width: 50px;
-  margin: 0 20px;
+  margin: 0 20px; 
 }
 #app .displaying {
   background-color: #A34F33;
