@@ -1,0 +1,101 @@
+[
+    {
+        "id": 1,
+        "clue": "This newly-built museum houses old things from Tennessee including a wagon, long hunters’ rifles, and a mummy.",
+        "answer": "TN State Museum",
+        "image": "/img/TNStateMusuem.jpg",
+        "desc": "",
+        "directions": "Dicetions to the TN State Museum",
+        "order": 1,
+        "display": false,
+        "got": false
+    },
+    {
+        "id": 2,
+        "clue": "Started nearly 200 years ago, this is the place local growers can pull up their trucks, unpack their crates, and sell what they gathered from their fields. Fresh zucchini, anyone? ",
+        "answer": "Nashville Farmer's Market",
+        "image": "/img/farmersMarket.jpeg",
+        "desc": "This is the description of the Farmer's Market.",
+        "directions": "Dicetions to the Farmer's Market",
+        "order": 2,
+        "display": false,
+        "got": false
+    },
+    {
+        "id": 3,
+        "clue": "Legislative Plaza Clue",
+        "answer": "Legislative Plaza",
+        "desc": "Legislative Plaza description",
+        "image": "/img/capitol.jpg",
+        "directions": "Dicetions to the Legislative Plaza",
+        "order": 1,
+        "display": false,
+        "got": false
+    },
+    {
+        "id": 4,
+        "clue": "Nashville Public Library Clue",
+        "answer": "Nashville Public Library",
+        "image": "/img/firstTNPark.jpg",
+        "desc": "This is the description of the Nashville Public Library",
+        "directions": "Dicetions to the Nashville Public Library",
+        "order": 4,
+        "display": false,
+        "got": false
+    },
+    {
+        "id": 5,
+        "clue": "The Arcade Clue",
+        "answer": "The Arcade",
+        "image": "/img/firstTNPark.jpg",
+        "desc": "This is the description of the The Arcade",
+        "directions": "Dicetions to the The Arcade",
+        "order": 5,
+        "display": false,
+        "got": false
+    },
+    {
+        "id": 6,
+        "clue": "Fort Nashborough /Riverfront Park Clue",
+        "answer": "Fort Nashborough /Riverfront Park",
+        "image": "/img/firstTNPark.jpg",
+        "desc": "This is the description of Fort Nashborough /Riverfront Park",
+        "directions": "Dicetions to Fort Nashborough /Riverfront Park",
+        "order": 6,
+        "display": false,
+        "got": false
+    },
+    {
+        "id": 7,
+        "clue": "TN State Capital Clue",
+        "answer": "The State Capital ",
+        "desc": "The State Capital description",
+        "image": "/img/capitol.jpg",
+        "directions": "Dicetions to the TN State Museum",
+        "order": 7,
+        "display": false,
+        "got": false
+    },
+    {
+        "id": 8,
+        "clue": "This site originally hosted African American and Minor League Baseball teams from the 1800's through 1963,  it's now the home of a musically named baseball team!",
+        "answer": "First TN Park",
+        "image": "/img/firstTNPark.jpg",
+        "desc": "This is the description of First TN Park",
+        "directions": "Dicetions to the First TN Park",
+        "order": 8,
+        "display": false,
+        "got": false
+    },
+    {
+        "id": 9,
+        "clue": "To celebrate TN's 200th birthday, this park was created.  At the south end of it you will find a 200-foot-long granite map of Tennessee!",
+        "answer": "Bicentennial Mall",
+        "image": "/img/bicentenialMall.jpg",
+        "desc": "This is the description of the Bicentenial Mall.",
+        "directions": "Dicetions to the Bicentennial Mall",
+        "order": 9,
+        "display": false,
+        "got": false
+    }
+]
