@@ -1,6 +1,30 @@
 [
     {
+<<<<<<< HEAD
         "id": 1,
+=======
+      "id": 1,
+      "clue": "This is the TN seat of government",
+      "answer": "State Capital",
+      "image": "/img/capitol.jpg",
+      "desc": "This is the description of the State Capital.",
+      "order": 3,
+      "display": false,
+      "got": false
+    },
+    {
+        "id": 2,
+        "clue": "Started nearly 200 years ago, this is the place local growers can pull up their trucks, unpack their crates, and sell what they gathered from their fields. Fresh zucchini, anyone? ",
+        "answer": "Nashville Farmer's Market",
+        "image": "/img/farmersMarket.jpeg",
+        "desc": "This is the description of the Farmer's Market.",
+        "order": 2,
+        "display": false,
+        "got": false
+    },
+    {
+        "id": 4,
+>>>>>>> 719edad38aea36ea36315f84f405ec4c0fc4f414
         "clue": "This newly-built museum houses old things from Tennessee including a wagon, long hunters’ rifles, and a mummy.",
         "answer": "TN State Museum",
         "image": "/img/TNStateMusuem.jpg",
@@ -33,6 +57,7 @@
         "got": false
     },
     {
+<<<<<<< HEAD
         "id": 4,
         "clue": "Nashville Public Library Clue",
         "answer": "Nashville Public Library",
@@ -99,3 +124,25 @@
         "got": false
     }
 ]
+=======
+      "id": 3,
+      "clue": "NEED CLUE ",
+      "answer": "Bicentennial Mall",
+      "image": "/img/bicentenialMall.jpg",
+      "desc": "This is the description of the Bicentenial Mall.",
+      "order": 4,
+      "display": false,
+      "got": false
+    },
+    {
+        "id": 5,
+        "clue": "NEED CLUE ",
+        "answer": "First TN Park",
+        "image": "/img/firstTNPark.jpg",
+        "desc": "This is the description of the First TN Park",
+        "order": 5,
+        "display": false,
+        "got": false
+      }
+  ]
+>>>>>>> 719edad38aea36ea36315f84f405ec4c0fc4f414
